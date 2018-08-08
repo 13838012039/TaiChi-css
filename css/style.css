@@ -1,3 +1,12 @@
+.content {
+    padding: 1px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .yin-yang {
     width: 96px;
     height: 48px;
@@ -6,7 +15,31 @@
     border-color: #ccc;
     border-width: 2px 2px 50px 2px;
     border-radius: 100%;
-    position: relative;
+    position: absolute;
+    animation-duration: 6s;
+    animation-name: spin2;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.one {
+    left: 0;
+    top: 0;
+}
+
+.two {
+    right: 0;
+    top: 0;
+}
+
+.three {
+    bottom: 0px;
+    left: 0;
+}
+
+.four {
+    bottom: 0px;
+    right: 0;
 }
 
 .yin-yang::before {
@@ -31,4 +64,76 @@
     border-radius: 100%;
     width: 12px;
     height: 12px;
+}
+
+.yinyangBox {
+    position: relative;
+    margin: 100px auto;
+    height: 400px;
+    width: 400px;
+}
+
+.yinyang {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(0, 0, 0, 1) 51%, rgba(0, 0, 0, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    height: 400px;
+    width: 400px;
+    border-radius: 100%;
+    position: relative;
+    animation-duration: 6s;
+    animation-name: spin;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.yinyang::before {
+    content: '';
+    background: white;
+    border: 80px solid black;
+    border-radius: 100%;
+    position: absolute;
+    left: 0;
+    top: 100px;
+    height: 40px;
+    width: 40px;
+}
+
+.yinyang::after {
+    content: '';
+    background: black;
+    border: 80px solid white;
+    border-radius: 100%;
+    position: absolute;
+    right: 0;
+    top: 100px;
+    height: 40px;
+    width: 40px;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin2 {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+.content {
+    position: relative;
+    max-width: 960px;
+    margin: 10px auto;
+}
+
+body {
+    background: blue;
 }
